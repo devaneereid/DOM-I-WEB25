@@ -57,6 +57,14 @@ aTags[4].innerText = "About"
 aTags[5].setAttribute('class', 'nav');
 aTags[5].innerText = "Contact"
 
+aTags.forEach( element => {
+  element.style.color = 'green';
+});
+
+let addAnchor = document.querySelector('nav');
+addAnchor.append("Sign Up");
+addAnchor.prepend("Welcome!");
+console.log(addAnchor.textContent);
 
 // CTA Section
 let ctaImg = document.getElementById("cta-img");
@@ -92,15 +100,12 @@ mainContent[4].querySelector('p').innerText = siteContent['main-content']['visio
 
 // Contact Section
 
-let contact = document.querySelector('.contact', 'h4');
-contact.textContent = siteContent['.contact'];
-
-let addContact = document.querySelectorAll('.contact p');
-addContact.textContent = siteContent['.contact p']['address'];
-
-
-
-
+let contactSection = document.querySelector('section.contact').children;
+contactSection[0].innerText= siteContent.contact['contact-h4'];
+contactSection[1].innerText = siteContent.contact.address;
+contactSection[1].style.whiteSpace = "pre";
+contactSection[2].innerText= siteContent.contact.phone;
+contactSection[3].innerText = siteContent.contact.email;
 
 
 // Footer Section

@@ -40,3 +40,92 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+// Nav Section 
+let aTags = document.querySelectorAll("a");
+aTags[0].setAttribute('class', 'nav');
+aTags[0].innerText = "Services"
+aTags[1].setAttribute('class', 'nav');
+aTags[1].innerText = "Product"
+aTags[2].setAttribute('class', 'nav');
+aTags[2].innerText = "Vision"
+aTags[3].setAttribute('class', 'nav');
+aTags[3].innerText = "Features"
+aTags[4].setAttribute('class', 'nav');
+aTags[4].innerText = "About"
+aTags[5].setAttribute('class', 'nav');
+aTags[5].innerText = "Contact"
+
+aTags.forEach( element => {
+  element.style.color = 'green';
+});
+
+let addAnchor = document.querySelector('nav');
+addAnchor.append("Sign Up");
+addAnchor.prepend("Welcome!");
+console.log(addAnchor.textContent);
+
+
+
+// CTA Section
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+// let ctaTitle = document.querySelector("h1");
+// ctaTitle.style.whiteSpace = 'pre';
+// ctaTitle.textContent = 'DOM\nIS\nAWESOME';
+
+const ctaTitle = document.querySelector('.cta-text > h1');
+ctaTitle.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
+
+
+
+let button = document.querySelector("button");
+button.textContent = "Get Started"
+
+
+// Main Content Section
+let midImg = document.querySelector("#middle-img");
+midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+let mainContent = document.querySelectorAll('.text-content');
+mainContent[0].querySelector('h4').innerText = siteContent['main-content']['features-h4'];
+mainContent[0].querySelector('p').innerText = siteContent['main-content']['features-content'];
+mainContent[1].querySelector('h4').innerText = siteContent['main-content']['about-h4'];
+mainContent[1].querySelector('p').innerText = siteContent['main-content']['about-content'];
+mainContent[2].querySelector('h4').innerText = siteContent['main-content']['services-h4'];
+mainContent[2].querySelector('p').innerText = siteContent['main-content']['services-content'];
+mainContent[3].querySelector('h4').innerText = siteContent['main-content']['product-h4'];
+mainContent[3].querySelector('p').innerText = siteContent['main-content']['product-content'];
+mainContent[4].querySelector('h4').innerText = siteContent['main-content']['vision-h4'];
+mainContent[4].querySelector('p').innerText = siteContent['main-content']['vision-content'];
+
+
+// Contact Section
+
+let contactSection = document.querySelector('section.contact').children;
+contactSection[0].innerText= siteContent.contact['contact-h4'];
+contactSection[1].innerText = siteContent.contact.address;
+contactSection[1].style.whiteSpace = "pre";
+contactSection[2].innerText= siteContent.contact.phone;
+contactSection[3].innerText = siteContent.contact.email;
+
+
+// Footer Section
+let footer = document.querySelector('footer');
+footer.innerText = siteContent.footer.copyright;
+console.log(footer);
+
+
+
+// Stretch Goal - Study & Add Styles
+
+document.getElementById("middle-img").style.outline = "thick double #0000FF";
+
+document.querySelector('body').style.background = "#CCF7FF";
+
+mainContent.forEach( element => {
+  element.style.color = "navy";
+})
+

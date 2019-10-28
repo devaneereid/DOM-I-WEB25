@@ -66,6 +66,8 @@ addAnchor.append("Sign Up");
 addAnchor.prepend("Welcome!");
 console.log(addAnchor.textContent);
 
+
+
 // CTA Section
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
@@ -76,6 +78,8 @@ ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
 
 const ctaTitle = document.querySelector('.cta-text > h1');
 ctaTitle.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
+
+
 
 let button = document.querySelector("button");
 button.textContent = "Get Started"
@@ -112,3 +116,16 @@ contactSection[3].innerText = siteContent.contact.email;
 let footer = document.querySelector('footer');
 footer.innerText = siteContent.footer.copyright;
 console.log(footer);
+
+
+
+// Stretch Goal - Study & Add Styles
+
+document.getElementById("middle-img").style.outline = "thick double #0000FF";
+
+document.querySelector('body').style.background = "#CCF7FF";
+
+mainContent.forEach( element => {
+  element.style.color = "navy";
+})
+
